@@ -1,0 +1,41 @@
+# ── Python ────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# ── Virtual environments ───────────────────────────────────────
+venv/
+env/
+.env/
+.venv/
+
+# ── Jupyter ───────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── Generated chart files ─────────────────────────────────────
+# (charts are auto-generated on each run, no need to commit them)
+*.png
+*.jpg
+*.jpeg
+
+# ── IDE / Editor ──────────────────────────────────────────────
+.vscode/
+.idea/
+*.code-workspace
+
+# ── OS files ──────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Logs and coverage ─────────────────────────────────────────
+*.log
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ── Distribution ──────────────────────────────────────────────
+dist/
+build/
+*.egg-info/
