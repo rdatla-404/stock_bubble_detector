@@ -288,7 +288,7 @@ def check_rsi(data):
             f"{days_overbought} of the last 30 trading days"
         )
 
-    return min(30, score), warnings
+    return min(40, score), warnings
 
 
 def check_moving_average(data):
