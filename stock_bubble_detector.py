@@ -490,7 +490,7 @@ def run_bubble_analysis(ticker, data):
 # SECTION 4: AVOIDANCE STRATEGIES
 # -------------------------------------------------------------
 
-def generate_strategies(ticker, current_price, bubble_score):
+def generate_strategies(ticker, current_price, bubble_score, ma_200_value=None):
     """
     Return a list of actionable strategies based on the bubble score.
 
