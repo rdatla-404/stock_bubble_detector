@@ -540,9 +540,9 @@ def generate_strategies(ticker, current_price, bubble_score):
             },
             {
                 'priority': 'MEDIUM',
-                'action':   f'PLAN RE-ENTRY NEAR ${current_price * 0.65:.2f}',
-                'detail':   (f"Bubbles often mean-revert fully to the 200-day MA. "
-                             f"Consider re-entering {ticker} near that level.")
+                'action': f'PLAN RE-ENTRY NEAR ${ma_200_value:.2f}',
+                'detail': (f"Bubbles often mean-revert to the 200-day MA. "
+                           f"Current 200-day MA: ${ma_200_value:.2f}.")
             },
             {
                 'priority': 'MEDIUM',
