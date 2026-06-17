@@ -177,7 +177,7 @@ def get_rsi(data, period=14):
     losses = abs(losses)          # Make losses positive for the formula
 
     # Rolling average of gains and losses over the lookback period
-    avg_gain = gains.rolling(window=period).mean()
+    avg_gain = gains.ewm(com=period - 1, min_periods=period).mean()
     avg_loss = losses.rolling(window=period).mean()
 
     # Guard against division by zero
