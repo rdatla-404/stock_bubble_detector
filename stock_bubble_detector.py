@@ -178,7 +178,7 @@ def get_rsi(data, period=14):
 
     # Rolling average of gains and losses over the lookback period
     avg_gain = gains.ewm(com=period - 1, min_periods=period).mean()
-    avg_loss = losses..ewm(com=period - 1, min_periods=period).mean()
+    avg_loss = losses.ewm(com=period - 1, min_periods=period).mean()
 
     # Guard against division by zero
     avg_loss = avg_loss.replace(0, 0.0001)
@@ -938,7 +938,8 @@ def main():
 
         # Step 6: Generate and print avoidance strategies
         current_price = get_current_price(data)
-        strategies    = generate_strategies(ticker, current_price, result['bubble_score'])
+        ma_200_value  = float(get_moving_average(data, 200).iloc[-1]) if len(data) >= 200 else None
+        strategies    = generate_strategies(ticker, current_price, result['bubble_score'], ma_200_value)
         print_strategies(ticker, result['bubble_score'], strategies)
 
         # Step 7: Plot the detail chart
